@@ -1,0 +1,10 @@
+alter table library2.members add check(state in ('active','inactive'));
+alter table library2.books add check(copy_current>=0 and copy_amount>=copy_current);
+alter table library2.books add foreign key (genre_id) references Genres(genre_id);
+alter table library2.authors_books add foreign key (author_id) references Authors (author_id);
+alter table library2.authors_books add foreign key (book_id) references Books (book_id);
+alter table library2.tickets add check(due_date>=borrow_date);
+alter table library2.tickets add check(return_date>=borrow_date);
+alter table library2.tickets add foreign key (member_id) references Members(member_id);
+alter table library2.ticketdetails add foreign key (book_id) references Books(book_id);
+alter table library2.ticketdetails add foreign key (ticket_id) references Tickets(ticket_id);

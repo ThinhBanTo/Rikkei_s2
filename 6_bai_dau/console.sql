@@ -1,0 +1,6 @@
+-- create database LibraryDB;
+-- create database UniversityDB;
+-- create database SalesDB;
+-- create database ElearningDB;
+--create database HotelDB;
+--create database EcommerceDB;
